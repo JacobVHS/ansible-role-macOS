@@ -1,0 +1,16 @@
+---
+
+- name: Install XCode Command Line Tools
+  ansible.builtin.include_tasks:
+    file: xcode.yaml
+  when: ansible_os_family == 'Darwin'
+
+- name: Install Required Homebrew Packages
+  ansible.builtin.include_tasks:
+    file: brew.yaml
+  when: ansible_os_family == 'Darwin'
+
+- name: Configure the shell
+  ansible.builtin.include_tasks:
+    file: shell_conf.yaml
+  when: ansible_os_family == 'Darwin'
