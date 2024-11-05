@@ -2,7 +2,7 @@
 
 ## Installation
 ```shell
-ansible-galaxy install jacobvhs.unix_conf_management
+ansible-galaxy role install JacobVHS.macos_conf
 ```
 
 ## Usage Example
@@ -12,9 +12,12 @@ ansible-galaxy install jacobvhs.unix_conf_management
   hosts: localhost
   vars:
     username: "jacobschreuder"
+    homebrew_formulaes:
+      - tmux
+    homebrew_casks:
+      - kitty
   roles:
-    - jacobvhs.
-
+    - JacobVHS.macos_conf
 ```
 ```shell
 ansible-playbook playbook.yaml
